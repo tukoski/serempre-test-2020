@@ -1,0 +1,98 @@
+/****************************************************************************************
+** Colors
+ ****************************************************************************************/
+/* Theme-colors */
+$blue:      #007bff;
+$gray-600:  #6c757d;
+$green:     #28a745;
+$cyan:      #17a2b8;
+$yellow:    #f1c743;
+$red:       #b91d36;
+$white:     #fff;
+$black:     #000;
+/* Rewrite theme-colors */
+$primary:       $yellow;
+$secondary:     $red;
+$light:         $white;
+$dark:          $black;
+/* $success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red; */
+/* Otros */
+$orange:    #fd7e14;
+$indigo:    #6610f2;
+$purple:    #6f42c1;
+$pink:      #e83e8c;
+$teal:      #20c997;
+/* Colors map additions */
+$colors: (
+  "black":  $black
+);
+/* Body */
+$body-bg:     $white;
+$body-color:  $white;
+/* Links */
+$link-color:              $yellow;
+//$link-hover-color:        darken($link-color, 15%) !default;
+//$link-hover-decoration:   underline !default;
+
+$grid-gutter-width: 0px;
+
+/****************************************************************************************
+** Font-family
+ ****************************************************************************************/
+$font-family-sans-serif: "Gilroy", sans-serif;
+
+/****************************************************************************************
+** Breakpoints - replaced for bootstrap implementation
+ ****************************************************************************************/
+$grid-breakpoints: (
+  xs:     0,
+  320:    320px,
+  375:    375px,
+  425:    425px,
+  sm:     576px,
+  md:     768px,
+  lg:     992px,
+  xl:     1200px,
+  xxl:    1600px
+);
+
+/****************************************************************************************
+** Classes generation
+replaced for bootstrap implementation
+
+How to use?
+For color: .text-color
+For background: .bg-color
+
+ ****************************************************************************************/
+/****************************************************************************************
+** Mixins
+ ****************************************************************************************/
+ /**
+ * respond-to - Aplica el contenido a el $breakpoint correspondiente
+ * Ej de uso: @include respond-to(small) {}
+ * @param string $breakpoint al cual se le va a aplicar el bloque
+ * @return string bloque de contenido envuelto or el $breakpoint proveido
+ **/
+@mixin respond-to($breakpoint) {
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($grid-breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$grid-breakpoints` map.";
+  }
+}
+/**
+* color - retorna un color del map de colores
+replaced for bootstrap implementation
+How to use?
+color("purple");
+**/
+@import "../../node_modules/bootstrap/scss/bootstrap";

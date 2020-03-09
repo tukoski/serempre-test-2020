@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+.tmp
+.idea
+.swp
+ecosystem.json
+Thumbs.db
+dist
+temp
+
+# Misc
+.DS_Store
+.vscode
+.history
+*error_log

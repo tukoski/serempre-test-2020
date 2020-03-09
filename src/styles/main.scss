@@ -1,0 +1,383 @@
+@charset "utf-8";
+@import "./variables";
+@import "./helpers";
+@import "./fonts";
+
+/****************************************************************************************
+ ** Bases
+ ****************************************************************************************/
+html, body {
+  height: 100%;
+  font-size: 17px;
+  
+  @include respond-to(lg) {
+    font-size: 25px;
+  }
+  @include respond-to(425) {
+    font-size: 23px;
+  }
+  @include respond-to(375) {
+    font-size: 19px;
+  }
+  @include respond-to(320) {
+    font-size: 15px;
+  }
+}
+
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-weight: bold;
+  margin-left: -5px;
+  font-size: 10rem;
+  line-height: 8rem;
+  @include respond-to(md) {
+    font-size: 4rem;
+    line-height: 3.2rem;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  margin-left: -2px;
+  font-size: 3.5rem;
+  line-height: 3rem;
+  @include respond-to(sm) {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  margin-left: -4px;
+  font-size: 6.5rem;
+  line-height: 6.2rem;
+  @include respond-to(md) {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+  }
+}
+
+/* h4 {
+  font-weight: 300;
+}
+
+h5 {
+  font-weight: 100;
+} */
+
+p {
+  font-weight: 300;
+  /* font-size: 6vw;
+  line-height: 3vh; */
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  @include respond-to(md) {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+  }
+}
+
+b {
+  font-weight: bold;
+}
+
+img, object, embed, video {
+    max-width: 100%;
+}
+/****************************************************************************************
+ ** Index
+ ****************************************************************************************/
+.second-slide,
+.third-slide {
+  margin-bottom: 18px;
+}
+
+.third-slide,
+.fourth-slide {
+  padding: 0 18px;
+}
+
+.first-slide,
+.second-slide {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.first-slide {
+  background-image: url("../../imagenes/fondo_1.png");
+  position: relative;
+  overflow: visible;
+  height: calc(100vh - 32px);
+  border-radius: 30px 0;
+  margin: 18px;
+  margin-bottom: 18px;
+  padding: 0;
+
+  .logo {
+    position: absolute;
+    width: 3vw;
+    top: 13vh;
+    right: 3.5vw;
+  }
+  .slide-content {
+    position: absolute;
+    top: 18vh;
+    left: 1.5vw;
+  }
+  .bottle-mobile {
+    position: absolute;
+    top: 64vh;
+    left: -6vh;
+    height: 120vh;
+    z-index: 1;
+  }
+  p {
+    font-weight: bold;
+    margin-left: 11vw;
+    &.first {
+      margin-top: 7vh;
+    }
+  }
+  .scroll {
+    position: absolute;
+    bottom: 2vh;
+    left: calc(50% - 61px);
+    z-index: 10;
+  }
+
+  @include respond-to(xxl) {
+    p {
+      margin-left: 14vw;
+    }
+  }
+
+  @include respond-to(lg) {
+    .bottle-mobile {
+      left: -9vh;
+    }
+  }
+
+  @include respond-to(md) {
+    background-image: url("../../imagenes/fondo_movil_1.png");
+
+    .logo {
+      width: 10vw;
+      top: 30px;
+      right: 4vw;
+    }
+    .slide-content {
+      top: 23vh;
+      left: 5vw;
+    }
+    .bottle-mobile {
+      height: 94vh;
+    }
+    p {
+      margin-left: 0;
+      &.first {
+        margin-top: 0;
+      }
+    }
+  }
+}
+.second-slide-desktop {
+  background-image: url("../../imagenes/fondo_2.png"), url("../../imagenes/fondo_gris_ruido.jpg");
+  background-size: 58% 100%;
+  background-position: left top, right top;
+  background-repeat: no-repeat, repeat;
+  min-height: 50vh;
+
+  .main-content {
+    padding-top: 5vh;
+    p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1rem;
+    }
+    .shop {
+      margin-left: -2vw;
+    }
+  }
+
+  .buy-section {
+    h2 {
+      margin-top: 5vh;
+    }
+    .packs {
+      margin-top: 12vh;
+    }
+    .border {
+      border: 1px solid color("yellow") !important;
+      font-size: 35px;
+      padding: 2px 40px;
+      &.left {
+        border-radius: 28px 0 0 28px;
+      }
+      &.right {
+        border-radius: 0 28px 28px 0;
+      }
+    }
+    .note {
+      font-size: 0.8rem;
+    }
+    .arrows-container {
+      width: 32px;
+      margin-top: 3px;
+    }
+    .btn {
+      padding: 10px 40px;
+      border-radius: 28px;
+    }
+  }
+
+  @include respond-to(md) {
+    margin-bottom: 18px;
+    
+    .main-content .shop {
+      margin-left: -4vw;
+    }
+  }
+  
+  @include respond-to(425) {
+    .main-content p {
+      font-size: 0.8rem;
+    }
+  }
+
+  @include respond-to(375) {
+    .main-content  {
+      padding-top: 7vh;
+      p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+.second-slide {
+  background-image: url("../../imagenes/fondo_2.png");
+  height: calc(70vh - 36px);
+  padding: 0 18px;
+  position: relative;
+  
+  .stamp {
+    position: absolute;
+    top: 5vh;
+    left: -167px;
+  }
+  @include respond-to(md) {
+    background-image: url("../../imagenes/fondo_movil_2.png");
+  }
+
+  @include respond-to(375) {
+    height: calc(90vh - 50px);
+  }
+
+  @include respond-to(320) {
+    height: calc(100vh - 32px);
+  }
+}
+
+.fourth-slide,
+.third-slide,
+.black-bg {
+  background-image: url("../../imagenes/fondo_gris_ruido.jpg");
+  background-repeat: repeat;
+}
+
+.third-slide {
+  padding-top: 20px;
+  height: 20vh;
+  .numbers {
+    padding: 0 15px;
+
+    .col {
+      text-align: center;
+      position: relative;
+      font-weight: 100;
+      height: auto;
+      font-size: 5rem;
+      line-height: 6rem;
+
+      &::before {
+        content: "|";
+        position: absolute;
+        color: #b91d36 !important;
+        font-size: 17px;
+        left: 0;
+        top: 0;
+      }
+      &:first-child::before,
+      &:last-child::after {
+        top: -2vh;
+      }
+      &:first-child::before {
+        content: url(../../imagenes/Pintas-pica.png);
+        position: absolute;
+        left: -22px;
+        font-size: inherit;
+      }
+      &:last-child::after {
+        content: url(../../imagenes/Pintas-pica2.png);
+        position: absolute;
+        right: -22px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    height: 30vh;
+    p {
+      line-height: 1.5rem;
+      font-size: 1.5rem;
+    }
+    .numbers {
+      margin-top: 2vh;
+      .col {
+        font-size: 14vw;
+        line-height: 7rem;
+        &::before {
+          top: 0;
+        }
+      }
+    }
+  }
+  @include respond-to(sm) {
+    height: 20vh;
+    p {
+      line-height: 1.1rem;
+      font-size: 1.1rem;
+    }
+    .numbers {
+      margin-top: 1vh;
+      .col {
+        line-height: 3rem;
+        &:first-child::before,
+        &:last-child::after {
+          top: -1vh;
+        }
+      }
+    }
+  }
+}
+
+.fourth-slide {
+  height: 70vh !important;
+  padding-top: 8vh !important;
+  .column {
+    height: auto;
+  }
+}

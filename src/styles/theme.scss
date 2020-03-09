@@ -1,0 +1,23 @@
+// Set your brand colors
+$red: #b91d36;
+$white: #ffffff;
+$yellow: #f1c743;
+
+// Update Bulma's global variables
+$family-sans-serif: "Gilroy", sans-serif;
+$primary: $yellow;
+$info: $red;
+$success: pink;
+//$text: $white;
+$link: $yellow;
+$gap: 32px;
+
+// Import only what you need from Bulma
+// @import "../../node_modules/bulma/sass/utilities/_all.sass";
+// @import "../../node_modules/bulma/sass/base/_all.sass";
+// @import "../../node_modules/bulma/sass/grid/_all.sass";
+// @import "../../node_modules/bulma/sass/layout/_all.sass";
+// @import "../../node_modules/bulma/sass/elements/_all.sass";
+// @import "../../node_modules/bulma/sass/form/_all.sass";
+@import "../../node_modules/bulma-helpers/bulma-helpers.sass";
+@import "../../node_modules/bulma/bulma.sass";
